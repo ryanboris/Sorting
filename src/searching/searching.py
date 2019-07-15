@@ -21,24 +21,50 @@ def linear_search(arr, target):
 
 
 # # STRETCH: write an iterative implementation of Binary Search
-# def binary_search(arr, target):
+def binary_search(arr, target):
+    '''
+    while i < len(arr)
+        Find mid element
+        if mid == target
+            return mid (index of found item)
+        if mid < target
+            throw out left side (smaller than) mid
+            reassign arr to right side
+            increment while counter
+        if mid > target
+            throw out right side (greater than) mid
+            reasign arr to left side slice to mid
+            increment while counter
+    '''
+    arr = sorted(arr)
+    if len(arr) == 0:
+        return -1
+    i = 0
+    while i < len(arr):
+        low = 0
+        high = len(arr) - 1
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        else:
+            if arr[mid] > target:
+                arr = arr[:mid]
+                i += 1
+            else:
+                arr = arr[mid:]
+                i += 1
+    return -1
 
-#   if len(arr) == 0:
-#     return -1 # array empty
 
-#   low = 0
-#   high = len(arr)-1
+print(binary_search([-9, -8, -6, -4, -3, -2, 0, 1, 2, 3, 5, 7, 8, 9], -2))
 
-#   # TO-DO: add missing code
-
-#   return -1 # not found
+# STRETCH: write a recursive implementation of Binary Search
 
 
-# # STRETCH: write a recursive implementation of Binary Search
-# def binary_search_recursive(arr, target, low, high):
+def binary_search_recursive(arr, target, low, high):
 
-#   middle = (low+high)//2
+    middle = (low+high)//2
 
-#   if len(arr) == 0:
-#     return -1 # array empty
-#   # TO-DO: add missing if/else statements, recursive calls
+    if len(arr) == 0:
+        return -1  # array empty
+    # TO-DO: add missing if/else statements, recursive calls
