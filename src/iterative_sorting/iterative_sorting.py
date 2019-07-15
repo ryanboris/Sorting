@@ -25,10 +25,28 @@ def selection_sort(arr):
     return arr
 
 
-# # TO-DO:  implement the Bubble Sort function below
-# def bubble_sort(arr):
-
-#     return arr
+def bubble_sort(arr):
+    '''
+    Plan/Pseudo:
+        swaps_performed
+        while swaps_performed
+            not swaps_performed
+            iterate over arr
+                if arr[i] > arr[arr i + 1]
+                    swap arr[i] and arr[i+1]
+                    swaps_performed -> back to [0] to repeat
+            enditerate
+        endwhile
+    '''
+    last_index = len(arr) - 1
+    swaps_performed = True
+    while swaps_performed:
+        swaps_performed = False
+        for i in range(last_index):
+            if arr[i] > arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                swaps_performed = True
+    return arr
 
 
 # # STRETCH: implement the Count Sort function below
