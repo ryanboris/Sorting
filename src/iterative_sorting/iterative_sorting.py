@@ -49,7 +49,17 @@ def bubble_sort(arr):
     return arr
 
 
-# # STRETCH: implement the Count Sort function below
-# def count_sort(arr, maximum=-1):
+#  STRETCH: implement the Count Sort function below
+def count_sort(arr, maximum=-1):
+    m = maximum + 1
+    count = [0] * m
 
-#     return arr
+    for num in arr:
+        count[num] += 1
+
+    i = 0
+    for n in range(m):
+        for j in range(count[n]):
+            arr[i] = n
+            i += 1
+    return arr
