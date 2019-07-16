@@ -72,9 +72,3 @@ def binary_search_recursive(arr, target, low, high):
         return binary_search_recursive(arr, target, low, mid - 1)
     else:
         return mid
-
-
-arr = [1, 3, 4, 33, 49, 38, 100, 48, 5, 6, 7, 8]
-
-
-print(binary_search_recursive(arr, 8, 0, len(arr) - 1))
