@@ -8,6 +8,8 @@ autopep8 = "*"
 pep8 = "*"
 
 [packages]
+scipy = "*"
+numpy = "*"
 
 [requires]
 python_version = "3.7"
