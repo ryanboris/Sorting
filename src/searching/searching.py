@@ -36,23 +36,20 @@ def binary_search(arr, target):
             reasign arr to left side slice to mid
             increment while counter
     '''
+    # l = low
+    # h = high
+    # m = mid
     arr = sorted(arr)
-    if len(arr) == 0:
-        return -1
-    i = 0
-    while i < len(arr):
-        low = 0
-        high = len(arr) - 1
-        mid = (low + high) // 2
-        if arr[mid] == target:
-            return mid
+    l = 0
+    h = len(arr) - 1
+    while l <= h:
+        m = (l + h) // 2
+        if arr[m] == target:
+            return m
+        if arr[m] > target:
+            h = m - 1
         else:
-            if arr[mid] > target:
-                arr = arr[:mid]
-                i += 1
-            else:
-                arr = arr[mid:]
-                i += 1
+            l = m + 1
     return -1
 
 
