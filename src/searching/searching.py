@@ -61,16 +61,15 @@ def binary_search_recursive(arr, target, low, high):
     if len(arr) > 1:
         mid_idx = (low + high) // 2
         if arr[mid_idx] == target:
-            return target
+            return mid_idx
         else:
             if arr[mid_idx] > target:
                 arr = arr[:mid_idx]
-                return binary_search_recursive(arr, target, 0, len(arr)-1)
+                return binary_search_recursive(arr, target, 0, len(arr) - 1)
             elif arr[mid_idx] < target:
                 arr = arr[mid_idx:]
-                return binary_search_recursive(arr, target, 0, len(arr)-1)
+                return binary_search_recursive(arr, target, 0, len(arr) - 1)
             else:
                 return -1
-
     else:
         return -1
